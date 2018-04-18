@@ -2,3 +2,19 @@ ID: GitDemo
 _schema-version: '2.0'
 description: Git Demo
 version: 0.0.1
+
+modules:
+ - name: gitModelTest
+   type: hdb
+   path: gitModelTest
+   requires:
+    - name: hdi_gitModelTest
+
+resources:
+ - name: hdi_gitModelTest
+   parameters:
+      config:
+         schema: GIT_DEMO
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
